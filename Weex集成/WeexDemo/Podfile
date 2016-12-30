@@ -1,0 +1,7 @@
+platform :ios, '8.0'
+
+target 'WeexDemo' do
+pod 'WeexSDK', :path=>’./sdk/'
+
+end
+
