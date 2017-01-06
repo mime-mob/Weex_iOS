@@ -32,6 +32,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(rander) name:@"RefreshInstance" object:nil];
+    [self rander];
+}
+
+- (void)rander {
     self.wxInstance = [[WXSDKInstance alloc] init];
     self.wxInstance.viewController = self;
     self.wxInstance.frame = self.view.frame;
@@ -54,7 +59,6 @@
     self.view.backgroundColor = [UIColor whiteColor];
 }
 
-
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -62,6 +66,7 @@
 
 - (void)dealloc {
     [self.wxInstance destroyInstance];
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

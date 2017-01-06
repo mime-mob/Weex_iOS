@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <WeexSDK.h>
 #import "ViewController.h"
+#import "WXDevTool.h"
 
 @interface AppDelegate ()
 
@@ -23,6 +24,14 @@
     [WXAppConfiguration setAppVersion:@"1.0.0"];
     //启动weex环境
     [WXSDKEngine initSDKEnviroment];
+#ifdef DEBUG
+    [WXDevTool setDebug:YES];
+    [WXDevTool launchDevToolDebugWithUrl:@"ws://99.48.58.63:8088/debugProxy/native"];
+    
+#else
+    [WXDevTool setDebug:NO];
+    
+#endif
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
