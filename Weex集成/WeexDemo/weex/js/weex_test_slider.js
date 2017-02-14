@@ -48,6 +48,7 @@
 	var __weex_style__ = __webpack_require__(2)
 	var __weex_script__ = __webpack_require__(3)
 
+
 	__weex_define__('@weex-component/ef44890590606f0299afe943d45a3c41', [], function(__weex_require__, __weex_exports__, __weex_module__) {
 
 	    __weex_script__(__weex_module__, __weex_exports__, __weex_require__)
@@ -262,4 +263,6 @@
 
 
 /***/ }
+    
+
 /******/ ]);

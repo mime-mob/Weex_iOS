@@ -1,7 +1,7 @@
 ### Weex与Native性能对比
 分别用native和weex编写同样的页面如下图所示，分别从demo运行时所消耗的CPU、内存、滑动页面的FPS三个标准来进行横向对比，纵向场景分别为native、weex加载本地文件、weex加载远程文件三个。
 [caption="Figure 2: "]
-image:../Weex与Native性能对比/页面.png[依赖图]
+image:https://github.com/mime-mob/Weex_iOS/blob/master/Weex与Native性能对比/页面.PNG[依赖图]
 
 #### Weex与Native性能对比
 [width="80%",cols="3,^2,^2,10",options="header"]
@@ -20,38 +20,38 @@ image:../Weex与Native性能对比/页面.png[依赖图]
 
 native_cpu
 [caption="Figure 2: "]
-image:../Weex与Native性能对比/native_cpu.png[依赖图]
+image:https://github.com/mime-mob/Weex_iOS/blob/master/Weex与Native性能对比/native_cpu.png[依赖图]
 
 native_memory
 [caption="Figure 2: "]
-image:../Weex与Native性能对比/native_memory.png[依赖图]
+image:https://github.com/mime-mob/Weex_iOS/blob/master/Weex与Native性能对比/native_memory.png[依赖图]
 
 weex_local_cpu
 [caption="Figure 2: "]
-image:../Weex与Native性能对比/weex_local_cpu.png[依赖图]
+image:https://github.com/mime-mob/Weex_iOS/blob/master/Weex与Native性能对比/weex_local_cpu.png[依赖图]
 
 weex_local_memory
 [caption="Figure 2: "]
-image:../Weex与Native性能对比/weex_local_memory.png[依赖图]
+image:https://github.com/mime-mob/Weex_iOS/blob/master/Weex与Native性能对比/weex_local_memory.png[依赖图]
 
 weex_remote_cpu
 [caption="Figure 2: "]
-image:../Weex与Native性能对比/weex_remote_cpu.png[依赖图]
+image:https://github.com/mime-mob/Weex_iOS/blob/master/Weex与Native性能对比/weex_remote_cpu.png[依赖图]
 
 weex_remote_memory
 [caption="Figure 2: "]
-image:../Weex与Native性能对比/weex_remote_memory.png[依赖图]
+image:https://github.com/mime-mob/Weex_iOS/blob/master/Weex与Native性能对比/weex_remote_memory.png[依赖图]
 
 native_fps
 [caption="Figure 2: "]
-image:../Weex与Native性能对比/native_fps.png[依赖图]
+image:https://github.com/mime-mob/Weex_iOS/blob/master/Weex与Native性能对比/native_fps.png[依赖图]
 
 weex_local_fps
 [caption="Figure 2: "]
-image:../Weex与Native性能对比/weex_local_fps.png[依赖图]
+image:https://github.com/mime-mob/Weex_iOS/blob/master/Weex与Native性能对比/weex_local_fps.png[依赖图]
 
 weex_remote_fps
 [caption="Figure 2: "]
-image:../Weex与Native性能对比/weex_remote_fps.png[依赖图]
+image:https://github.com/mime-mob/Weex_iOS/blob/master/Weex与Native性能对比/weex_remote_fps.png[依赖图]
 
-具体的demo请参见github https://github.com/mime-mob/Weex_iOS/tree/master/Weex集成[]
+具体的demo请参见github https://github.com/mime-mob/Weex_iOS/tree/master/Weex与Native性能对比[]

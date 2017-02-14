@@ -1,0 +1,70 @@
+在网上搜了一圈，结果只在weex官方手册里找到这么一段: https://weex-project.io/cn/references/advanced/extend-to-ios.html
+按照文档描述，Weex SDK 只提供渲染，而不是其他的能力，如果你需要 像网络，图片，URL跳转这些特性，需要自己动手实现他们
+例如，如果你想实现一个url地址跳转函数，你可以按照如下步骤实现一个 Module：
+----------
+1、自定义的module类 必须实现 WXModuleProtocol
+2、必须添加宏WX_EXPORT_METHOD, 它可以被weex识别，它的参数是 JavaScript调用 module指定方法的参数
+3、添加@synthesized weexInstance，每个moudle对象被绑定到一个指定的实例上
+4、Module 方法会在UI线程中被调用，所以不要做太多耗时的任务在这里，如果要在其他线程执行整个module 方法，需要实现WXModuleProtocol中- (NSThread *)targetExecuteThread的方法，这样，分发到这个module的任务会在指定的线程中运行
+5、Weex 的参数可以是 String 或者Map
+6、Module 支持返回值给 JavaScript中的回调，回调的类型是WXModuleCallback,回调的参数可以是String或者Map
+----------
+Module自定义好了后通过调用 WXSDKEngine 中的 registerModule:withClass方法来注册自己的module，最后在weex代码中使用自己定义的module。
+
+==== 按照文档的描述，我自己在demo中测试了一下，下面是测试过程及代码：
+
+- 自定义Module
+
+首先创建一个native类，demo中我将其命名成WXEventModule。在该类的.h文件中遵循WXModuleProtocol协议，在.m文件中的代码如下：
+----------
+@implementation WXEventModule
+
+@synthesize weexInstance;
+
+WX_EXPORT_METHOD(@selector(openURL:callback:))
+
+- (void)openURL:(NSString *)url callback:(WXModuleCallback)callback {
+    callback(@{@"result":@"===========succeed!=========="});
+}
+
+@end
+----------
+ok，到这自定义Module算是结束了
+
+- 注册自定义Module
+
+在appdelegate中初始化配置Weex环境时注册上面定义好的模块：
+----------
+[WXSDKEngine registerModule:@"event" withClass:[WXEventModule class]];
+----------
+
+- 在Weex代码中调用自定义Module，并将native中的参数传到weex页面
+
+demo中创建了一个CallBackTest.we文件，里面代码如下：
+----------
+<template>
+  <div class="wrapper">
+    <div ref="test" @click="move" class="box"></div>
+  </div>
+</template>
+<script>
+    var eventModule = require('@weex-module/event');
+      eventModule.openURL('url',function(ret) {
+              console.log(ret);
+          });
+</script>
+<style scoped>
+  .box {
+    width: 250px;
+    height: 250px;
+    background-color: #DDD;
+  }
+</style>
+----------
+
+将其运行起来终端输出如下：
+----------
+2017-02-14 10:28:55.607 WeexDemo[2704:384433] [fg128,128,128; <Weex>[log]WXJSCoreBridge.m:85, jsLog: {"result":"===========succeed!=========="}  [;
+2017-02-14 10:28:55.664 WeexDemo[2704:384323] 加载成功
+----------
+native中的数据通过js的log打印了出来，说明weex调用原生类成功，并将原生中的数据传到了weex页面。

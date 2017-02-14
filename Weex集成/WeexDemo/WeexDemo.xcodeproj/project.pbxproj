@@ -17,6 +17,7 @@
 		E64E12201E0D2BDA0066156F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E64E121E1E0D2BDA0066156F /* LaunchScreen.storyboard */; };
 		E64E122B1E0D2BDA0066156F /* WeexDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E64E122A1E0D2BDA0066156F /* WeexDemoTests.m */; };
 		E64E12361E0D2BDA0066156F /* WeexDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E64E12351E0D2BDA0066156F /* WeexDemoUITests.m */; };
+		E6D653431E51884000DF7F8D /* WXEventModule.m in Sources */ = {isa = PBXBuildFile; fileRef = E6D653421E51884000DF7F8D /* WXEventModule.m */; };
 		E6DB8E2A1E31E114007054F1 /* WXImageLoaderImpl.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DB8E291E31E114007054F1 /* WXImageLoaderImpl.m */; };
 		E6DB8E4C1E31E168007054F1 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = E6DB8E2C1E31E168007054F1 /* LICENSE */; };
 		E6DB8E4D1E31E168007054F1 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = E6DB8E2D1E31E168007054F1 /* README.md */; };
@@ -143,6 +144,8 @@
 		E64E12311E0D2BDA0066156F /* WeexDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeexDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E64E12351E0D2BDA0066156F /* WeexDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WeexDemoUITests.m; sourceTree = "<group>"; };
 		E64E12371E0D2BDA0066156F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E6D653411E51884000DF7F8D /* WXEventModule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXEventModule.h; sourceTree = "<group>"; };
+		E6D653421E51884000DF7F8D /* WXEventModule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXEventModule.m; sourceTree = "<group>"; };
 		E6DB8E281E31E114007054F1 /* WXImageLoaderImpl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WXImageLoaderImpl.h; sourceTree = "<group>"; };
 		E6DB8E291E31E114007054F1 /* WXImageLoaderImpl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WXImageLoaderImpl.m; sourceTree = "<group>"; };
 		E6DB8E2C1E31E168007054F1 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
@@ -398,6 +401,8 @@
 				E64E12141E0D2BDA0066156F /* AppDelegate.m */,
 				E64E12161E0D2BDA0066156F /* ViewController.h */,
 				E64E12171E0D2BDA0066156F /* ViewController.m */,
+				E6D653411E51884000DF7F8D /* WXEventModule.h */,
+				E6D653421E51884000DF7F8D /* WXEventModule.m */,
 				E64E12191E0D2BDA0066156F /* Main.storyboard */,
 				E64E121C1E0D2BDA0066156F /* Assets.xcassets */,
 				E64E121E1E0D2BDA0066156F /* LaunchScreen.storyboard */,
@@ -862,6 +867,7 @@
 				E6DE7EC31E1F661B00CF4492 /* WXApplicationCacheTypes.m in Sources */,
 				E6DB8E4D1E31E168007054F1 /* README.md in Sources */,
 				E6DE7EF21E1F661B00CF4492 /* NSOrderedSet+WXRuntimePropertyDescriptor.m in Sources */,
+				E6D653431E51884000DF7F8D /* WXEventModule.m in Sources */,
 				E6DE7EEC1E1F661B00CF4492 /* NSDate+WX_JSONObject.m in Sources */,
 				E6DB8E531E31E168007054F1 /* SDWebImageDownloaderOperation.m in Sources */,
 				E6DE7F061E1F661B00CF4492 /* WXSourceDebuggerDomainController.m in Sources */,

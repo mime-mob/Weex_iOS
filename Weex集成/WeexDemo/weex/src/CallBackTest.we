@@ -1,0 +1,18 @@
+<template>
+  <div class="wrapper">
+    <div ref="test" @click="move" class="box"></div>
+  </div>
+</template>
+<script>
+    var eventModule = require('@weex-module/event');
+      eventModule.openURL('url',function(ret) {
+              console.log(ret);
+          });
+</script>
+<style scoped>
+  .box {
+    width: 250px;
+    height: 250px;
+    background-color: #DDD;
+  }
+</style>

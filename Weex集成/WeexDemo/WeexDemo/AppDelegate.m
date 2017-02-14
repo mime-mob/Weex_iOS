@@ -11,6 +11,7 @@
 #import "ViewController.h"
 #import "WXDevTool.h"
 #import "WXImageLoaderImpl.h"
+#import "WXEventModule.h"
 
 @interface AppDelegate ()
 
@@ -27,6 +28,7 @@
     [WXSDKEngine initSDKEnviroment];
     //注册图片加载协议
     [WXSDKEngine registerHandler:[WXImageLoaderImpl new] withProtocol:@protocol(WXImgLoaderProtocol)];
+    [WXSDKEngine registerModule:@"event" withClass:[WXEventModule class]];
 #ifdef DEBUG
 //    [WXDevTool setDebug:YES];
 //    [WXDevTool launchDevToolDebugWithUrl:@"ws://99.48.58.63:8088/debugProxy/native"];

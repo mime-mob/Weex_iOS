@@ -22,9 +22,9 @@
 - (instancetype)initWithJs:(NSString *)jsPath {
     if (self = [super init]) {
         //远程js文件
-//        NSString *path=[NSString stringWithFormat:@"http://99.48.58.63:8081/weex_tmp/h5_render/weex_test_slider.js?wsport=8082"];
+        NSString *path=[NSString stringWithFormat:@"http://99.48.58.63:8081/weex_tmp/h5_render/CallBackTest.js?wsport=8082"];
         //本地js文件
-        NSString *path = [NSString stringWithFormat:@"file://%@/js/%@",[NSBundle mainBundle].bundlePath,jsPath];
+//        NSString *path = [NSString stringWithFormat:@"file://%@/js/%@",[NSBundle mainBundle].bundlePath,jsPath];
         self.jsUrl = [NSURL URLWithString:path];
     }
     return self;
